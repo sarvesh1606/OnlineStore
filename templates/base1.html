@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Sarvesh IceCreams</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+
+ 
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/style2.css' %}" rel="stylesheet">
+
+</head>
+
+{% block body %}
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex">
+      <div class="contact-info mr-auto">
+        <i class="icofont-phone"></i> +91 123 456 7890
+        <span class="d-none d-lg-inline-block"><i class="icofont-clock-time icofont-rotate-180"></i> Mon-Sat: 11:00 AM - 23:00 PM</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo mr-auto"><a href="home">Sarvesh IceCreams</a></h1>
+      
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="home">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+
+          {% if not user.is_authenticated %}
+            
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'signup' %}">Signup</a></li>
+          
+          {% else %}
+            
+            <li><a href="javascript:{document.getElementById('logout_form').submit()}">Logout</a></li>
+            
+            <form id="logout_form" method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <input type="hidden">
+            </form>
+          
+          {% endif %}
+          
+          <li class="book-a-table text-center"><a href="#book-a-table">Book a order</a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-left" data-aos="zoom-in" data-aos-delay="100">
+      <div class="row">
+        <div class="col-lg-8">
+          <h1><span>Sarvesh IceCreams</span></h1>
+          <h2>Delivering the Best Quality Ice creams!</h2>
+
+          <div class="btns">
+            <a href="#menu" class="btn-menu animated fadeInUp scrollto">Our Menu</a>
+            <a href="#book-a-table" class="btn-book animated fadeInUp scrollto">Book a Order</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    
+
+    <!-- ======= Menu Section ======= -->
+    <section id="menu" class="menu section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Menu</h2>
+          <p>Check Our Tasty Menu</p>
+        </div>
+
+
+        <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="col-lg-6 menu-item filter-starters">
+            <img src="{% static 'img/menu/5c1877ed207be.image.jpg' %}" class="menu-img" alt="">
+            <div class="menu-content">
+              <a>Vanilla</a><span>$5.95</span>
+            </div>
+            <div class="menu-ingredients">
+              Vanilla Ice Cream
+            </div>
+          </div>
+
+          <div class="col-lg-6 menu-item filter-specialty">
+            <img src="{% static 'img/menu/Vegan-Strawberry-Coconut-Ice-Cream-Square-1.jpg' %}" class="menu-img" alt="">
+            <div class="menu-content">
+              <a>Strawberry</a><span>$6.95</span>
+            </div>
+            <div class="menu-ingredients">
+              Strawberry Ice Cream
+            </div>
+          </div>
+
+          <div class="col-lg-6 menu-item filter-starters">
+            <img src="{% static 'img/menu/71lwL8W4xxL._SL1500_.jpg' %}" class="menu-img" alt="">
+            <div class="menu-content">
+              <a>Choco Chips</a><span>$7.95</span>
+            </div>
+            <div class="menu-ingredients">
+              Choco Chips Ice Cream
+            </div>
+          </div>
+
+          <div class="col-lg-6 menu-item filter-salads">
+            <img src="{% static 'img/menu/coconut-ice-cream-square-1.jpg' %}" class="menu-img" alt="">
+            <div class="menu-content">
+              <a>Creamy Nuts</a><span>$8.95</span>
+            </div>
+            <div class="menu-ingredients">
+              Creamy Nuts Ice Cream
+            </div>
+          </div>
+
+          <div class="col-lg-6 menu-item filter-specialty">
+            <img src="{% static 'img/menu/Chocolate-Peanut-Butter-Brownies-close-square-sp.jpg' %}" class="menu-img" alt="">
+            <div class="menu-content">
+              <a>Chocolate Brownie</a><span>$9.95</span>
+            </div>
+            <div class="menu-ingredients">
+              Juicy Chocolate Brownie
+            </div>
+          </div>
+
+          <div class="col-lg-6 menu-item filter-starters">
+            <img src="{% static 'img/menu/butterscotch_square_copy_COMPRESSED.png' %}" class="menu-img" alt="">
+            <div class="menu-content">
+              <a>Butter Scoth </a><span>$4.95</span>
+            </div>
+            <div class="menu-ingredients">
+              Butter Scotch Ice Cream
+            </div>
+          </div>
+
+          <div class="col-lg-6 menu-item filter-salads">
+            <img src="{% static 'img/menu/500_F_253173951_RzcYPqrSgAxuTrdVudZsjOXul0nMcCW.jpg' %}" class="menu-img" alt="">
+            <div class="menu-content">
+              <a>Mango</a><span>$9.95</span>
+            </div>
+            <div class="menu-ingredients">
+              Mango Ice Cream
+            </div>
+          </div>
+
+          <div class="col-lg-6 menu-item filter-salads">
+            <img src="{% static 'img/menu/images.jfif' %}" class="menu-img" alt="">
+            <div class="menu-content">
+              <a>Custom </a><span>$9.95</span>
+            </div>
+            <div class="menu-ingredients">
+              Ice Cream of your own wish
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Menu Section -->
+
+    <!-- ======= Book A Table Section ======= -->
+    <section id="book-a-table" class="book-a-table">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Booking</h2>
+          <p>Book a Order</p>
+        </div>
+
+        {% if not user.is_authenticated %}
+          <div class="section-title">
+            <p> <a href="{% url 'login' %}" > Login </a> or <a href="{% url 'signup' %}"> Signup </a>  to continue </p>
+
+        {% else %}
+
+        <form action="/contact" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100" id="myForm" onsubmit="myFunction()" >
+        
+        {% csrf_token %}
+
+          <div class="form-row">
+            <div class="col-lg-4 col-md-6 form-group">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email (Optional)" >
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group">
+              <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone"  required>
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group">
+              <input type="text" name="order" class="form-control" id="date" placeholder="Your Order"  required>
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group">
+              <input type="text" class="form-control" name="time" id="time" placeholder="Expected Time"  required>
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group">
+              <input type="number" class="form-control" name="ice" id="people" placeholder="Quantity"  required>
+              <div class="validate"></div>
+            </div>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" name="instruct" rows="2" placeholder="Address"  required></textarea>
+            <div class="validate"></div>
+          </div>
+          
+          <div class="text-center"><button type="submit"  >Book a Order</button>
+          
+          </div>
+
+        </form>
+
+          <script>
+            function myFunction() 
+            {
+              alert("Order Placed!");
+              document.getElementById("myForm").reset();
+            }
+          </script>
+
+        {% endif %}
+
+      </div>
+    </section><!-- End Book A Table Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>Sarvesh IceCreams</h3>
+              <p>
+                Pune <br><br>
+
+                <strong>Phone:</strong> +91 123 456 7890<br>
+                <strong>Email:</strong> sarveshicecreams@gmail.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a >About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a >Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a >Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a >Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a >Fast Delivery</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a >Best Taste</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a >Reasonable Pricing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a >Quality Assurance</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a >Exiting Offers</a></li>
+            </ul>
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Sarvesh IceCreams</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+
+        Designed by <a href="https://bootstrapmade.com/">Sarvesh Kulkarni</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top"><i class="bx bx-up-arrow-alt"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'vendor/venobox/venobox.min.js' %}"></script>
+  <script src="{% static 'vendor/aos/aos.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'js/main.js' %}"></script>
+
+{% endblock body %}
+
+
+</html>
